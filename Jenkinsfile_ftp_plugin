@@ -12,7 +12,7 @@ node {
     def resourceGroup = 'plusworks'
     def webAppName = 'plusworks'
     sh 'mv target/*.war target/ROOT.war'
-    azureWebAppPublish azureCredentialsId: 'eed5ed9e-ceda-46f4-882e-5f22bfa95622', publishType: 'file',
+    azureWebAppPublish azureCredentialsId: 'azure-cli-2020-11-13-00-08-36', publishType: 'file',
                        resourceGroup: resourceGroup, appName: webAppName,
                        filePath: '*.war', sourceDirectory: 'target', targetDirectory: 'webapps'
   }
