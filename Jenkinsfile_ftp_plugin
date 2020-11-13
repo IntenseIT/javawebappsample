@@ -9,10 +9,10 @@ node {
   
   
   stage('deploy') {
-    def resourceGroup = '<myResourceGroup>'
-    def webAppName = '<myAppName>'
+    def resourceGroup = 'plusworks'
+    def webAppName = 'plusworks'
     sh 'mv target/*.war target/ROOT.war'
-    azureWebAppPublish azureCredentialsId: '<mySp>', publishType: 'file',
+    azureWebAppPublish azureCredentialsId: 'eed5ed9e-ceda-46f4-882e-5f22bfa95622', publishType: 'file',
                        resourceGroup: resourceGroup, appName: webAppName,
                        filePath: '*.war', sourceDirectory: 'target', targetDirectory: 'webapps'
   }
